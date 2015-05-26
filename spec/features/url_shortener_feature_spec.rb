@@ -17,6 +17,14 @@ feature 'homepage' do
       expect(page).to have_content 'www.google.com'
       expect(current_path).to eq '/urls'
     end
+
+    scenario "displays the unique key for each URL" do
+      visit '/'
+      fill_in 'Original', with: 'www.google.com'
+      click_button "Shorten it!"
+      expect(page).not_to have_content "Key: Shortened:"
+    end
+
   end
 
 end

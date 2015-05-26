@@ -6,7 +6,7 @@ class UrlsController < ApplicationController
   end
 
   def create
-    @url = Url.create(url_params)
+    @url = Url.create(url_params).generate_key
     redirect_to '/urls'
   end
 
