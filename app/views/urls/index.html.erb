@@ -1,11 +1,11 @@
-<%= form_for Url.new do |f| %>
+<%= form_for @url do |f| %>
   <%= f.label :original %>
   <%= f.text_field :original %>
   <%= f.submit "Shorten it!" %>
 <% end %>
 <br>
-<% if Url.all.any? %>
-  <% Url.all.each do |url| %>
+<% if @urls.any? %>
+  <% @urls.each do |url| %>
     URL: <%= url.original %> Key: <%= url.key %> Shortened: <%= url.shortened %>
   <% end %>
 <% else %>

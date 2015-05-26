@@ -1,15 +1,12 @@
 class UrlsController < ApplicationController
 
   def index
-
-  end
-
-  def new
-
+    @url = Url.new
+    @urls = Url.all
   end
 
   def create
-    Url.create(url_params)
+    @url = Url.create(url_params)
     redirect_to '/urls'
   end
 
