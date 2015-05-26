@@ -6,7 +6,7 @@
 <br>
 <% if @urls.any? %>
   <% @urls.each do |url| %>
-    URL: <%= url.original %> Key: <%= url.key %> Shortened: <%= url.shortened %>
+    <li>URL: <%= url.original %> Key: <%= url.key %> Shortened: <%= url.shortened %></li>
   <% end %>
 <% else %>
   <h2>No URL's created yet</h2>
