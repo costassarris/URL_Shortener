@@ -5,8 +5,4 @@ class Url < ActiveRecord::Base
     self.save
   end
 
-  def shorten
-
-  end
-
 end

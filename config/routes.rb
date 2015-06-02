@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
     resources :urls
-
+    get ':key' => 'urls#go'
   # Example resource route with options:
   #   resources :products do
   #     member do
@@ -53,4 +53,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
 end

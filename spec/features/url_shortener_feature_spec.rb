@@ -27,4 +27,16 @@ feature 'homepage' do
 
   end
 
+  context 'shortended URL' do
+
+    let!(:google){Url.create(original:'www.google.com', key: '7')}
+
+    scenario "can be clicked and visited" do
+      visit '/'
+      click_link '/7'
+      expect(current_path).to eq '/7'
+    end
+
+  end
+
 end
