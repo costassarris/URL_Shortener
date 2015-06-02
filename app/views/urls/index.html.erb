@@ -1,13 +1,26 @@
-<%= form_for @url do |f| %>
-  <%= f.label :original %>
-  <%= f.text_field :original %>
-  <%= f.submit "Shorten it!" %>
-<% end %>
+<form>
+  <%= form_for @url do |f| %>
+      <%= f.label :original %>
+      <%= f.text_field :original %>
+    <%= f.submit "Shorten it!" %>
+  <% end %>
+</form>
 <br>
 <% if @urls.any? %>
+<table class="table table-striped">
+  <tr>
+    <th>URL</th>
+    <th>Key</th>
+    <th>Shortened</th>
+  </tr>
   <% @urls.each do |url| %>
-    <li>URL: <%= url.original %> Key: <%= url.key %> Shortened: <%= url.shortened %></li>
+    <tr>
+      <td><%= url.original %></td>
+      <td><%= url.key %></td>
+      <td><%= url.shortened %></td>
+    </tr>
   <% end %>
+</table>
 <% else %>
   <h2>No URL's created yet</h2>
 <% end %>

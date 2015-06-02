@@ -18,11 +18,11 @@ feature 'homepage' do
       expect(current_path).to eq '/urls'
     end
 
+    let!(:google){Url.create(original:'www.google.com', key: '7')}
+
     scenario "displays the unique key for each URL" do
       visit '/'
-      fill_in 'Original', with: 'www.google.com'
-      click_button "Shorten it!"
-      expect(page).not_to have_content "Key: Shortened:"
+      expect(page).to have_content google.key
     end
 
   end
